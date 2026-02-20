@@ -1,0 +1,62 @@
+IMDb guesseR
+
+O IMDb guesseR é um jogo do tipo Player vs Player, onde dois jogadores competem para ver quem consegue adivinhar, com mais precisão, a pontuação IMDb de filmes ou séries.
+ 
+Como jogar
+
+1. Cada jogador introduz o seu nome.
+2. Escolhe-se a modalidade — Filmes, Séries ou Misto.
+3. Define-se o número de rondas.
+4. Em cada ronda, é apresentado um título aleatório e os jogadores tentam adivinhar a sua pontuação IMDb.
+5. O jogador cujo palpite estiver mais próximo da pontuação real ganha a ronda.
+6. No final, o jogo mostra o vencedor, o erro médio de cada jogador e o ranking atualizado.
+
+
+Menu principal
+O jogo é controlado através de um menu com seis opções:
+
+1 - Configurar jogadores
+Introduz ou altera os nomes dos dois jogadores.
+
+2 - Escolher modalidade
+Define se o jogo será apenas de filmes, séries ou misto.
+Função principal: carregar_datasets()
+
+3 - Jogar
+Inicia uma partida com rondas, cálculo de erros e registo de resultados.
+Funções: jogar_partida(), linha_historico(), guardar_historico(), atualizar_ranking()
+
+4 - Ver ranking
+Mostra a tabela global com jogos, vitórias, pontos e erro médio.
+Funções: mostrar_ranking(), ordenar_ranking(), mostrar_grafico_jogos()
+
+5 - Ver Tops IMDb
+Lista os 10 filmes e as 10 séries com melhor classificação.
+Função: mostrar_tops_imdb()
+
+6 - Sair
+Termina o programa com uma mensagem final.
+
+Origem dos dados
+
+Os dados utilizados foram obtidos do repositório GitHub (https://github.com/WittmannF/imdb-tv-ratings/tree/master/data), em que se exportou os dois ficheiros csv (filmes e séries). De modo, a facilitar a implementação, reduziu-se a dimensão das tabelas.
+
+Estrutura dos ficheiros
+
+Durante o jogo, são criados e atualizados automaticamente os ficheiros:
+
+imdb(MOVIES).csv
+Lista de filmes, respetivas pontuações IMDb e o ano.
+Função: carregar_datasets().
+
+imdb(SERIES).csv
+Lista de séries, respetivas pontuações IMDb e o intervalo anual.
+Função: carregar_datasets().
+
+historico_imdb.csv
+Guarda todas as rondas jogadas (título, ano, palpites e vencedor).
+Funções: linha_historico(), guardar_historico().
+
+ranking_jogadores.csv
+Guarda estatísticas globais dos jogadores (jogos, vitórias, pontos e erro médio).
+Funções: carregar_ranking(), ordenar_ranking().
